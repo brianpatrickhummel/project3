@@ -1,3 +1,18 @@
+**To Start**
+
+1) Client side - enter in the CLI:
+##npm start
+Will load in your browser on localhost:3000
+
+2) Server side - enter in the CLI:
+## nodemon server
+Will load on localhost:3001
+
+3) Enter your authO details in “auth0-variables.js” file:
+- domain name
+- client ID
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

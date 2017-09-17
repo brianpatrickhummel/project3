@@ -7,8 +7,10 @@
 
 
 export const AUTH_CONFIG = {
-  domain: // 'your auth0 domain name',
-  clientId: // 'your auth0 clientId,
+  domain: 'bookerapp.auth0.com',
+  // domain: // 'your auth0 domain name',
+  clientId: '3WuXzeQBXQnpXrAkUIsMWxqJX3iNL4fi',
+  // clientId: // 'your auth0 clientId,
   callbackUrl: 'http://localhost:3000/callback' // will need to change callback URI once in production
 }
 
