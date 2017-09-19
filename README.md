@@ -1,13 +1,13 @@
 ## **To Start**
 
-run 'npm install'
+run `npm install`
 
 1) Client side - enter in the CLI:
-'npm start'
+`npm start`
 Will load in your browser on localhost:3000
 
 2) Server side - enter in the CLI:
-'nodemon server'
+`nodemon server`
 Will load on localhost:3001
 
 3) Enter your authO details in “auth0-variables.js” file:
@@ -16,6 +16,8 @@ Will load on localhost:3001
 
 
 
+
+## Create-React-App Info
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
