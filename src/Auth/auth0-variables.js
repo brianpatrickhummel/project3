@@ -7,6 +7,7 @@
 
 
 export const AUTH_CONFIG = {
+  // AK's auth0 info below
   domain: 'bookerapp.auth0.com',
   // domain: // 'your auth0 domain name',
   clientId: '3WuXzeQBXQnpXrAkUIsMWxqJX3iNL4fi',
