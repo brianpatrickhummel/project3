@@ -1,9 +1,12 @@
-import mongoose from 'mongoose';
+const mongoose = require("mongoose");
 
-const CompanySchema = new mongoose.Schema({
+const Schema = mongoose.Schema;
+
+const CompanySchema = new Schema({
     username: {
       type: String,
-      required: true
+      required: true,
+      unique: true
     },
     password: {
         type: String,
@@ -36,5 +39,6 @@ const CompanySchema = new mongoose.Schema({
   });
 
 
-
-  export default mongoose.model('Company', CompanySchema);
+  const Company = mongoose.model('Company', CompanySchema);
+  
+  module.exports = Company;

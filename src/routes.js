@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Router } from 'react-router-dom';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -8,6 +8,7 @@ import Home from './Home/Home';
 import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
 import history from './history';
+import Calendar from './Components/Calendar';
 
 const auth = new Auth();
 
@@ -28,6 +29,7 @@ export const makeMainRoutes = () => {
               handleAuthentication(props);
               return <Callback {...props} /> 
             }}/>
+            <Route path="/schedule" render={(props) => <Calendar auth={auth} {...props} />} />
           </div>
         </Router>
       </MuiThemeProvider>

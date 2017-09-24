@@ -55,6 +55,13 @@ class App extends Component {
                   </Button>
                 )
             }
+            <Button
+              bsStyle="info"
+              className="btn-margin"
+              onClick={this.goTo.bind(this, 'schedule')}
+            >
+              Schedule Appointment
+            </Button>
           </Navbar.Header>
         </Navbar>
         
