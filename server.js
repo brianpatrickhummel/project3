@@ -46,6 +46,7 @@ db.once("open", () => {
 
 //POST new appointment + Twilio
 app.post('/api/appointments', (req, res) => {
+  //AK Twilio info
   const twilioSid = config.twilio.sid
   const twilioAuth = config.twilio.auth
   const twilioClient = twilio(twilioSid, twilioAuth)

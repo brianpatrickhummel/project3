@@ -28,11 +28,10 @@ import {
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton'
 import logo from './../logo.svg'
-// import PRODUCTION from './../Config/Production.js'
+
 
 injectTapEventPlugin()
 
-// const HOST = PRODUCTION ? '/' : 'http://localhost:3001/'
 const HOST = 'http://localhost:3001/'
 
 export default class Calendar extends Component {
@@ -115,10 +114,6 @@ export default class Calendar extends Component {
 
     this.setState({
       schedule,
-      // siteTitle: configs.site_title,
-      // aboutPageUrl: configs.about_page_url,
-      // contactPageUrl: configs.contact_page_url,
-      // homePageUrl: configs.home_page_url,
       loading: false
     })
 
@@ -216,14 +211,8 @@ export default class Calendar extends Component {
     this.setState({ smallScreen: window.innerWidth < 768 })
   }
 
-  //WIll need to un-comment this code in the future
   componentWillMount() {
     async.series({
-      // configs(callback) {
-      //   axios.get('api/config').then(res =>
-      //     callback(null, res.data.data)
-      //   )
-      // },
       appointments(callback) {
         axios.get(HOST + 'api/appointments').then(res => {
           callback(null, res.data.data)

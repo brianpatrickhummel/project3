@@ -9,6 +9,10 @@ import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
 import history from './history';
 import Calendar from './Components/Calendar';
+import userLandingPage from './Components/userLandingPage';
+import createProfile from './Components/createProfile';
+import bizProfile from './Components/bizProfile';
+
 
 const auth = new Auth();
 
@@ -18,6 +22,9 @@ const handleAuthentication = (nextState, replace) => {
   }
 }
 
+//need to include <Route path="/userLandingPage" render={(props) => <userLandingPage auth={auth}  {...props}/>} />
+//back in with the auth passed as props <Route path="/createProfile" render={(props) => <createProfile auth={auth} {...props}/>} />
+//HAS to happen for all components - keeps track of logged in users & info
 export const makeMainRoutes = () => {
   return (
     <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
@@ -30,6 +37,9 @@ export const makeMainRoutes = () => {
               return <Callback {...props} /> 
             }}/>
             <Route path="/schedule" render={(props) => <Calendar auth={auth} {...props} />} />
+            <Route path="/userLandingPage" component={userLandingPage}/>
+            <Route path="/createProfile" component={createProfile}/>
+            <Route path="/bizProfile" component={bizProfile}/>
           </div>
         </Router>
       </MuiThemeProvider>
