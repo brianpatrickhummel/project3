@@ -1,4 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import RaisedButton from 'material-ui/RaisedButton';
+
+//styling for the RaisedButtons
+const style = {
+  margin: 12,
+};
 
 class Home extends Component {
   login() {
@@ -10,24 +17,29 @@ class Home extends Component {
       <div className="container">
         {
           isAuthenticated() && (
+            <div className="loggedInContainer">
               <h4>
                 You are logged in!
+                Are you a User or a Business?
               </h4>
-            )
+              <Link to="/userLandingPage"><RaisedButton label="User" primary={true} style={style} /></Link>
+              <Link to="/createProfile"><RaisedButton label="Businsess" secondary={true} style={style} /></Link>
+            </div>
+          )
         }
         {
           !isAuthenticated() && (
-              <h4>
-                You are not logged in! Please{' '}
-                <a
-                  style={{ cursor: 'pointer' }}
-                  onClick={this.login.bind(this)}
-                >
-                  Log In
+            <h4>
+              You are not logged in! Please{' '}
+              <a
+                style={{ cursor: 'pointer' }}
+                onClick={this.login.bind(this)}
+              >
+                Log In
                 </a>
-                {' '}to continue.
+              {' '}to continue.
               </h4>
-            )
+          )
         }
       </div>
     );
