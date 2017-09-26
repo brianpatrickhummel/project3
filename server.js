@@ -11,7 +11,7 @@ const User = require("./src/Model/User");
 const Company = require("./src/Model/Company");
 const twilio = require('twilio');
 const moment = require('moment');
-const config = require('./src/Config');
+const config = require('./src/Config/Production');
 
 // Allow cross origin between client + server
 app.use(cors());
