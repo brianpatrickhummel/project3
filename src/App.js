@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Navbar, Button } from 'react-bootstrap';
 import './App.css';
 
-
+//REMOVE SCHEDULE APPOINTMENT -- MOVE TO USERLANDINGPAGE
 class App extends Component {
   goTo(route) {
     this.props.history.replace(`/${route}`)
