@@ -2,8 +2,8 @@
 
 module.exports = {
     twilio: {
-      auth: "ACe2940711bab4e2fb53aa96e8f87359c6",
-      sid: "c959419aea31a755293cbebdad55649c",
+      auth: "3206f9a61b0ce68cebdb225fe7dc8060",
+      sid: "AC0f32e323d8331986460a277e947798c0",
       number: "+18557206037"
     }
   }
