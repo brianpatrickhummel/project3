@@ -1,48 +1,94 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import RaisedButton from 'material-ui/RaisedButton';
+import axios from 'axios';
+
+// const HOST = process.env || 'http://localhost:3001/'
+
+const HOST = 'http://localhost:3001/'
 
 class createProfile extends Component {
     constructor(props) {
         super(props);
-        this.state = { value: '' };
+        this.state = {
+            name: '',
+            description: '',
+            location: '',
+            imageURL: ''
+        };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
-        this.setState({ value: event.target.value });
+        this.setState({[event.target.id]: event.target.value});
+        if (event.target.value === this.state.imageURL) {
+                const regex = /([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i
+                return regex.test(this.state.imageURL)
+        }
     }
 
     handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
         event.preventDefault();
+        axios.post(`${HOST}api/companies`, {
+            // username: this.props.auth.username,
+            // password: this.props.auth.password,
+            name: this.state.name,
+            description: this.state.description,
+            location: this.state.location,
+            imageURL: this.state.imageURL
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+    checkImageURL = imageURL => {
+        const regex = /([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i
+        return regex.test(imageURL)
     }
 
     render() {
         return (
             <div className="newBizForm">
+                <Link to="/bizProfile"><RaisedButton label="Skip to Profile" primary={true} /></Link>
+                <h1>Create your Business Profile</h1>
+
                 <form onSubmit={this.handleSubmit}>
-                    <h2>
-                        This form will handle everything we need to create a new business profile:
-                - name of business
-                - description of business (services offered & price)
-                - location (default to ATX for this due to time constraints)
-                - imageURL
-                - include the username and pass prop values passed from auth0
-            </h2>
-                    <label>
-                        Name:
-                <input type="text" value={this.state.value} onChange={this.handleChange} />
-                    </label>
+
+
+                    <div className="form-group">
+                        <label> Name: </label>
+                        <input type="text" id="name" value={this.state.name} onChange={this.handleChange} />
+
+                    </div>
+
+                    <div className="form-group">
+                        <label> Description: </label>
+                        <input type="text" id="description" value={this.state.description} onChange={this.handleChange} />
+
+                    </div>
+
+                    <div className="form-group">
+                        <label> Location: </label>
+                        <input type="text" id="location" value={this.state.location} onChange={this.handleChange} />
+
+                    </div>
+
+                    <div className="form-group">
+                        <label> Image URL: </label>
+                        <input type="text" id="imageURL" value={this.state.imageURL} onChange={this.handleChange}/>
+                    </div>
+
                     <input type="submit" value="Submit" />
                 </form>
-                <h2>
-                    Here we will add a button to skip (takes to bizProfile component & disable if it doesn't exist)
-            <Link to="/bizProfile"><RaisedButton label="Skip" primary={true} /></Link>
-                    The Submit button above should auto-redirect to the bizProfile component
-            </h2>
+
+                <h2>Click here to view your profile</h2>
+                <Link to="/bizProfile"><RaisedButton label="View Profile" secondary={true} /></Link>
             </div>
         );
     }
