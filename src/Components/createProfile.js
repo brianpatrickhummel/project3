@@ -47,10 +47,10 @@ class createProfile extends Component {
             });
     }
 
-    checkImageURL = imageURL => {
-        const regex = /([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i
-        return regex.test(imageURL)
-    }
+    // checkImageURL = imageURL => {
+    //     const regex = /([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i
+    //     return regex.test(imageURL)
+    // }
 
     render() {
         return (
@@ -63,25 +63,25 @@ class createProfile extends Component {
 
                     <div className="form-group">
                         <label> Name: </label>
-                        <input type="text" id="name" value={this.state.name} onChange={this.handleChange} />
+                        <input type="text" id="name" value={this.state.name} onChange={this.handleChange} placeholder="Business Name"/>
 
                     </div>
 
                     <div className="form-group">
                         <label> Description: </label>
-                        <input type="text" id="description" value={this.state.description} onChange={this.handleChange} />
+                        <input type="text" id="description" value={this.state.description} onChange={this.handleChange} placeholder="Add a description for your business"/>
 
                     </div>
 
                     <div className="form-group">
                         <label> Location: </label>
-                        <input type="text" id="location" value={this.state.location} onChange={this.handleChange} />
+                        <input type="text" id="location" value={this.state.location} onChange={this.handleChange} placeholder="City, State"/>
 
                     </div>
 
                     <div className="form-group">
                         <label> Image URL: </label>
-                        <input type="text" id="imageURL" value={this.state.imageURL} onChange={this.handleChange}/>
+                        <input type="text" id="imageURL" value={this.state.imageURL} onChange={this.handleChange} placeholder="https://www.example.com/image.png"/>
                     </div>
 
                     <input type="submit" value="Submit" />
