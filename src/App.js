@@ -24,7 +24,7 @@ class App extends Component {
         <Navbar fluid>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="/">Project 3</a>
+              <a href="/">Booker App</a>
             </Navbar.Brand>
             <Button
               bsStyle="primary"

@@ -78,6 +78,7 @@ app.post('/api/appointments', (req, res) => {
           res.send(newdoc);
         }
       });
+
       Company.findOneAndUpdate({}, { $push: { "appointments": doc._id } }, { new: true }, function (err, newdoc) {
         if (err) {
           res.send(err);
@@ -139,6 +140,16 @@ app.get("/api/appointments", function (req, res) {
   });
 });
 
+app.get("/api/companies", function (req, res) {
+  Company.find({}).exec(function (error, doc) {
+    if (error) {
+      res.send(error);
+    }
+    else {
+      res.send(doc);
+    }
+  });
+});
 
 //send 'em home
 app.get('/', (req, res) => {
