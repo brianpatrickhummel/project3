@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Router } from 'react-router-dom';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
+import darkBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import App from './App';
