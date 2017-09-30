@@ -30,6 +30,7 @@ class Home extends Component {
         }
         {
           !isAuthenticated() && (
+            <div className="loggedOutContainer">
             <h4>
               You are not logged in! Please{' '}
               <a
@@ -40,6 +41,7 @@ class Home extends Component {
                 </a>
               {' '}to continue.
               </h4>
+              </div>
           )
         }
       </div>
