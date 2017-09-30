@@ -22,10 +22,19 @@ body {
 }
 
 .loggedInContainer {
-    background-color: #E4DCDC;
+    background-color: white;
     padding: 2%;
+    border-radius: 10px;
+    border-color: #333;
 }
 
 .homeBtn {
     padding: 1%;
+    border-radius: 10px;
+    border-color: #333;
+}
+
+element.style {
+    border-radius: 10px;
+    border-color: #333;
 }

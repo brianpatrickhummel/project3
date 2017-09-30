@@ -5,6 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 //styling for the RaisedButtons
 const style = {
   margin: 12,
+  borderRadius: 10
 };
 
 class Home extends Component {
