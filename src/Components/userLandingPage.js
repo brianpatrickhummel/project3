@@ -40,7 +40,7 @@ class userLandingPage extends Component {
     bizRow() {
         if (this.state.companies instanceof Object) {
             return this.state.companies.map(function (object, i) {
-                return <bizRow obj={object} key={i}> 
+                return <bizRow obj={object} key={i} className="bizRow"> 
                     <h2>Name: {object.name}</h2>
                     <img src={object.imageURL} alt="business"/>
                     <h2>Location: {object.location}</h2>

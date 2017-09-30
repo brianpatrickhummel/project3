@@ -129,6 +129,7 @@ app.get("/api/companies/:id", function (req, res) {
   });
 });
 
+//GET all appointments
 app.get("/api/appointments", function (req, res) {
   Appointment.find({}).exec(function (error, doc) {
     if (error) {
