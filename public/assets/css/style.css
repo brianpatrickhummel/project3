@@ -15,3 +15,17 @@ body {
 .btn {
     background-color: #3949ab;
 }
+
+.jumbotron {
+    margin: 5%;
+    background-color: #ADABAB;
+}
+
+.loggedInContainer {
+    background-color: #E4DCDC;
+    padding: 2%;
+}
+
+.homeBtn {
+    padding: 1%;
+}

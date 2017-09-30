@@ -18,12 +18,12 @@ class Home extends Component {
         {
           isAuthenticated() && (
             <div className="loggedInContainer">
-              <h4>
+              <h2>
                 You are logged in!
                 Are you a User or a Business?
-              </h4>
-              <Link to="/userLandingPage"><RaisedButton label="User" primary={true} style={style} /></Link>
-              <Link to="/createProfile"><RaisedButton label="Businsess" secondary={true} style={style} /></Link>
+              </h2>
+              <Link to="/userLandingPage"><RaisedButton label="User" primary={true} style={style} className="homeBtn" /></Link>
+              <Link to="/createProfile"><RaisedButton label="Businsess" secondary={true} style={style} className="homeBtn" /></Link>
             </div>
           )
         }
