@@ -107,7 +107,7 @@ app.post('/api/companies', (req, res) => {
 //save new user
 app.post('/api/users', (req, res) => {
   const newUser = new User(req.body);
-  newBiz.save(function (error, doc) {
+  newUser.save(function (error, doc) {
     if (error) {
       console.log(error);
     }
@@ -118,20 +118,20 @@ app.post('/api/users', (req, res) => {
 });
 
 //GET appointments for a company
-app.get("/api/companies/:id", function (req, res) {
- id = req.params.id;
- console.log(`Id of the company : ${id}`);
-  const monmgoObjectId = mongoose.Types.ObjectId(id);
-  console.log(`Id of the company with ObjectId: ${monmgoObjectId}`);
-  Company.findById({ _id: monmoObjectId }).populate("appointments").exec(function (error, doc) {
-    if (error) {
-      res.send(error);
-    }
-    else {
-      res.send(doc);
-    }
-  });
-});
+// app.get("/api/companies/:id", function (req, res) {
+//  id = req.params.id;
+//  console.log(`Id of the company : ${id}`);
+//   const monmgoObjectId = mongoose.Types.ObjectId(id);
+//   console.log(`Id of the company with ObjectId: ${monmgoObjectId}`);
+//   Company.findById({ _id: monmoObjectId }).populate("appointments").exec(function (error, doc) {
+//     if (error) {
+//       res.send(error);
+//     }
+//     else {
+//       res.send(doc);
+//     }
+//   });
+// });
 
 //GET all appointments
 app.get("/api/appointments", function (req, res) {
@@ -147,7 +147,7 @@ app.get("/api/appointments", function (req, res) {
 
 //GET all companies
 app.get("/api/companies", function (req, res) {
-  Company.find({}).exec(function (error, doc) {
+  Company.find({}).populate("appointments").exec(function (error, doc) {
     if (error) {
       res.send(error);
     }
@@ -158,16 +158,19 @@ app.get("/api/companies", function (req, res) {
 });
 
 //GET a single company
-// app.get("/api/companies/:id", function (req, res) {
-//   Company.findById(req.params.id, function (error, doc) {
-//     if (error) {
-//       res.send(error);
-//     }
-//     else {
-//       res.send(doc);
-//     }
-//   });
-// });
+app.get("/api/companies/:id", function (req, res) {
+  console.log(req.params.id);
+  const ObjectId = mongoose.Schema.Types.ObjectId;
+  console.log(ObjectId(req.params.id));
+  Company.findById(ObjectId(req.params.id), function (error, doc) {
+    if (error) {
+      res.send(error);
+    }
+    else {
+      res.send(doc);
+    }
+  });
+});
 
 //send 'em home
 app.get('/', (req, res) => {

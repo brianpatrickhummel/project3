@@ -18,18 +18,16 @@ class bizProfile extends Component {
     }
 
     componentDidMount() {
-        axios.get(`${HOST}api/companies/:id`)
-            .then(response => {
-                this.setState({
-                    company: response.data,
-                    appointments: response.data.appointments
-
-                });
-                console.log(response.data);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+        axios.get(`${HOST}api/companies`)
+        .then(response => {
+            const dataLength = response.data.length-1;
+            const thisResponse = response.data[dataLength];
+            this.setState({ company: thisResponse });
+            console.log(thisResponse);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
     }
 
     handleChange() {
@@ -51,13 +49,17 @@ class bizProfile extends Component {
                     </apptRow>;
                 });
             }
+        } else {
+            return <h2>Sorry, no appointments found</h2>
         }
     };
 
     render() {
         return (
             <div className="bizProfileContainer">
-                <bizRow className="bizRow">
+            <h2>Welcome to your profile! This will show your company's Name, Description, Location, and Picture...
+                make it count and show off your best style!</h2>
+                <bizRow className="bizProfile">
                     <h2>Name: {this.state.company.name}</h2>
                     <img src={this.state.company.imageURL} alt="business" />
                     <h2>Location: {this.state.company.location}</h2>
