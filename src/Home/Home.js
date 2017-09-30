@@ -5,7 +5,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 //styling for the RaisedButtons
 const style = {
   margin: 12,
-  borderRadius: 10
+  borderRadius: 10,
+ 
 };
 
 class Home extends Component {
@@ -31,6 +32,9 @@ class Home extends Component {
         {
           !isAuthenticated() && (
             <div className="loggedOutContainer">
+              <h3>
+                Welcome to the Booker App. 
+                </h3>
             <h4>
               You are not logged in! Please{' '}
               <a
