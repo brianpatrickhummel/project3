@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Button } from 'react-bootstrap';
 import './App.css';
+import logo from './booker_logo.svg';
 
 //REMOVE SCHEDULE APPOINTMENT -- MOVE TO USERLANDINGPAGE
 class App extends Component {
@@ -24,7 +25,7 @@ class App extends Component {
         <Navbar fluid>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="/">Booker App</a>
+              <a href="/"><img src={logo} alt="Booker App"/></a>
             </Navbar.Brand>
             <Button
               bsStyle="primary"

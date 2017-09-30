@@ -27,7 +27,7 @@ body {
     background-color: #ADABAB;
 }
 
-.loggedInContainer {
+.loggedInContainer, .loggedOutContainer{
     background-color: white;
     padding: 2%;
     border-radius: 10px;
