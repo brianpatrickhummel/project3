@@ -119,7 +119,11 @@ app.post('/api/users', (req, res) => {
 
 //GET appointments for a company
 app.get("/api/companies/:id", function (req, res) {
-  Company.findOne({ "_id": req.params.id }).populate("appointments").exec(function (error, doc) {
+ id = req.params.id;
+ console.log(`Id of the company : ${id}`);
+  const monmgoObjectId = mongoose.Types.ObjectId(id);
+  console.log(`Id of the company with ObjectId: ${monmgoObjectId}`);
+  Company.findById({ _id: monmoObjectId }).populate("appointments").exec(function (error, doc) {
     if (error) {
       res.send(error);
     }
@@ -141,6 +145,7 @@ app.get("/api/appointments", function (req, res) {
   });
 });
 
+//GET all companies
 app.get("/api/companies", function (req, res) {
   Company.find({}).exec(function (error, doc) {
     if (error) {
@@ -151,6 +156,18 @@ app.get("/api/companies", function (req, res) {
     }
   });
 });
+
+//GET a single company
+// app.get("/api/companies/:id", function (req, res) {
+//   Company.findById(req.params.id, function (error, doc) {
+//     if (error) {
+//       res.send(error);
+//     }
+//     else {
+//       res.send(doc);
+//     }
+//   });
+// });
 
 //send 'em home
 app.get('/', (req, res) => {

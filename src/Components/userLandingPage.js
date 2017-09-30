@@ -33,19 +33,17 @@ class userLandingPage extends Component {
             .catch(function (error) {
                 console.log(error);
             });
-
-        axios.get()
     }
 
     bizRow() {
         if (this.state.companies instanceof Object) {
             return this.state.companies.map(function (object, i) {
-                return <bizRow obj={object} key={i} className="bizRow"> 
+                return <bizRow  key={i} className="bizRow"> 
                     <h2>Name: {object.name}</h2>
                     <img src={object.imageURL} alt="business"/>
                     <h2>Location: {object.location}</h2>
                     <h4>Description: {object.description}</h4>
-                    <Link to="/schedule"><button type="button" class="btn btn-info">Book Appointment</button></Link> 
+                    <Link to="/schedule"><button type="button" className="btn btn-info">Book Appointment</button></Link> 
                     </bizRow>;
             })
         }
