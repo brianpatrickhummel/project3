@@ -20,3 +20,12 @@ body {
     margin: 5%;
     background-color: #ADABAB;
 }
+
+.loggedInContainer {
+    background-color: #E4DCDC;
+    padding: 2%;
+}
+
+.homeBtn {
+    padding: 1%;
+}
