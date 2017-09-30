@@ -15,3 +15,8 @@ body {
 .btn {
     background-color: #3949ab;
 }
+
+.jumbotron {
+    margin: 5%;
+    background-color: #ADABAB;
+}

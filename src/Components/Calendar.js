@@ -243,33 +243,6 @@ export default class Calendar extends Component {
     ]
     return (
       <div>
-        <AppBar
-          title={data.siteTitle}
-          onLeftIconButtonTouchTap={() => this.handleNavToggle()} />
-        <Drawer
-          docked={false}
-          width={300}
-          open={navOpen}
-          onRequestChange={(navOpen) => this.setState({ navOpen })} >
-          <img src={logo} alt={'Science'}
-            style={{
-              height: 70,
-              marginTop: 50,
-              marginBottom: 30,
-              marginLeft: '50%',
-              transform: 'translateX(-50%)'
-            }} />
-          <a style={{ textDecoration: 'none' }} href={this.state.homePageUrl}><MenuItem>Home</MenuItem></a>
-          <a style={{ textDecoration: 'none' }} href={this.state.aboutPageUrl}><MenuItem>About</MenuItem></a>
-          <a style={{ textDecoration: 'none' }} href={this.state.contactPageUrl}><MenuItem>Contact</MenuItem></a>
-
-          <MenuItem disabled={true}
-            style={{
-              marginLeft: '50%',
-              transform: 'translate(-50%)'
-            }}>
-            {"© Copyright " + moment().format('YYYY')}</MenuItem>
-        </Drawer>
         <section style={{
           maxWidth: !smallScreen ? '80%' : '100%',
           margin: 'auto',

@@ -56,7 +56,7 @@ class bizProfile extends Component {
 
     render() {
         return (
-            <div className="bizProfileContainer">
+            <div className="bizProfileContainer jumbotron">
             <h2>Welcome to your profile! This will show your company's Name, Description, Location, and Picture...
                 make it count and show off your best style!</h2>
                 <bizRow className="bizProfile">
