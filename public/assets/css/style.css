@@ -4,8 +4,14 @@ body {
 }
 
 .panelTitle {
-    background-color: #3949ab;
+    background-color: #5bc0de;
     color: white;
+}
+
+.form-control:focus {
+    background-color: transparent;
+    color: gray;
+    font-size: 22px;
 }
 
 .panel {
@@ -28,13 +34,30 @@ body {
     border-color: #333;
 }
 
-.homeBtn {
-    padding: 1%;
+.bizContainer {
+    background-color: white;
+    padding: 2%;
     border-radius: 10px;
     border-color: #333;
 }
 
-element.style {
+.bizContainer h1 {
+    color: #337ab7;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.container .bizContainer {
+    width: 50%;
+}
+
+.homeBtn,
+.subBtn {
+    padding: 1%;
     border-radius: 10px;
-    border-color: #333;
+}
+
+label {
+    color: #337ab7;
+    font-size: 20px;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import RaisedButton from 'material-ui/RaisedButton';
+// import RaisedButton from 'material-ui/RaisedButton';
+import { Button } from 'react-bootstrap';
 import axios from 'axios';
 
 // const HOST = process.env || 'http://localhost:3001/'
@@ -54,8 +55,8 @@ class createProfile extends Component {
 
     render() {
         return (
-            <div className="container">
-                <Link to="/bizProfile"><RaisedButton label="Skip to Profile" className="btn btn secondary" /></Link>
+            <div className="container bizContainer">
+                <Link to="/bizProfile"><Button label="Skip to Profile" className="btn btn-info makeBtn">Skip</Button></Link>
                 <h1>Create your Business Profile</h1>
 
                 <form onSubmit={this.handleSubmit}>
@@ -84,11 +85,11 @@ class createProfile extends Component {
                         <input type="text" className="form-control" id="imageURL" value={this.state.imageURL} onChange={this.handleChange} placeholder="https://www.example.com/image.png"/>
                     </div>
 
-                    <input type="submit" value="Submit" />
+                    <input className="subBtn btn btn-info" type="submit" value="Submit" />
                 </form>
 
                 <h2>Click here to view your profile</h2>
-                <Link to="/bizProfile"><RaisedButton label="View Profile" className="btn btn secondary" /></Link>
+                <Link to="/bizProfile"><Button label="View Profile" className="btn btn-info makeBtn" >View Profile</Button></Link>
             </div>
         );
     }
