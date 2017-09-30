@@ -53,7 +53,7 @@ class userLandingPage extends Component {
     render() {
         return (
             <div>
-                <div className="container">
+                <div className="container gmapCon">
                     <Card className="gMapsContainer">
                         <CardText>
                             <h2>Barbers in Austin, TX [BETA]</h2>
@@ -63,7 +63,7 @@ class userLandingPage extends Component {
                 <br />
                 <GoogleApiWrapper />
                 <br />
-                <div className="container" style={bizStyle}>
+                <div className="container barberContainer" style={bizStyle}>
                     <Card className="barbers">
                         <CardText>
                             <h2>Barbers to visit</h2>
